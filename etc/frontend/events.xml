@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    
+    <!-- following event layout_generate_blocks_after dispatched in Magento\Framework\View\Layout\Builder class-->
+    <event name="layout_generate_blocks_after">
+        <observer name="add_remove_block" instance="Asad\Observers\Observer\AddRemoveBlock" />
+    </event>
+   
+</config>
