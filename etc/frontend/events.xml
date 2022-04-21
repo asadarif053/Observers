@@ -3,6 +3,15 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
     
     <!-- following event layout_generate_blocks_after dispatched in Magento\Framework\View\Layout\Builder class-->
+    <!-- 
+        in Builder class 3 things happens
+        1. Load Layout Updates
+        2. Generate Layout Xml and
+        3. Generate Layout Blocks
+        
+        our target is the catch event after generateing layout blocks, then remove it from the layout
+    
+    -->
     <event name="layout_generate_blocks_after">
         <observer name="add_remove_block" instance="Asad\Observers\Observer\AddRemoveBlock" />
     </event>
