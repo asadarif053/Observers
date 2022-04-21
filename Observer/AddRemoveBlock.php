@@ -22,6 +22,12 @@ class AddRemoveBlock implements ObserverInterface{
             if($block){ // sometimes the block may be removed
                 $layout->unsetElement($block->getNameInLayout()); //view.addto.compare
             }
+
+
+            //Magento\Framework\View\Layout.php, addBlock()
+            
+            $newBlock = $layout->addBlock(\Magento\Framework\View\Element\Template::class, 'observer.test.block','product.info.addto'); //($block, $name = 'givenName', $parent = '', $alias = '')
+            $newBlock->setTemplate("Asad_Observers::link.phtml");
         }
     }
 }
